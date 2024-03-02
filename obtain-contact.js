@@ -54,8 +54,8 @@ async function listContacts(auth) {
     if (person.names && person.names.length > 0 && person.emailAddresses && person.emailAddresses.length > 0) {
         let contact = 
         {
-            name: 'contact name', // person.names[0].displayName,
-            email: 'contact email' // person.emailAddresses[0].value
+            name: person.names[0].displayName,
+            email: person.emailAddresses[0].value
         };
         console.log(contact);
         fs.appendFile('./contacts.json', JSON.stringify(contact), err => {
